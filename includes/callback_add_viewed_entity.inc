@@ -87,7 +87,7 @@ class SearchApiAlterAddViewedEntity extends SearchApiAbstractAlterCallback {
     $GLOBALS['user'] = backdrop_anonymous_user();
 
     // Switch to the default theme for rendering if it's not the current one.
-    $old_theme = _search_api_swap_theme(variable_get('theme_default'));
+    $old_theme = _search_api_swap_theme(config_get('system.core', 'theme_default'));
 
     $type = $this->index->getEntityType();
     $mode = empty($this->options['mode']) ? 'full' : $this->options['mode'];
